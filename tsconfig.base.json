@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@todo-web/apps/authorization/signin": [
+        "libs/apps/authorization/signin/src/index.ts"
+      ],
+      "@todo-web/apps/authorization/signup": [
+        "libs/apps/authorization/signup/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
