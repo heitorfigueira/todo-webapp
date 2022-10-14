@@ -2,38 +2,24 @@ import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-export const authenticationRoutes: Route[] = [
+
+import { AppComponent } from './app.component';
+
+export const appRoutes: Route[] = [
   {
     path: '',
-    redirectTo: 'signin',
-    pathMatch: 'full'
-  },
-  {
-    path: 'signin',
-    loadChildren: () =>
-      import('@todo-web/apps/authentication/signin')
-      .then(m => m.AuthenticationSigninModule)
-  },
-  {
-    path: 'signup',
-    loadChildren: () =>
-      import('@todo-web/apps/authentication/signup')
-      .then(m => m.AuthenticationSignupModule)
-  },
-  {
-    path: '**',
-    redirectTo: 'signin',
-  },
+    component: AppComponent
+  }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(authenticationRoutes),
+    RouterModule.forRoot(appRoutes),
   ],
   exports: [
     RouterModule
   ]
 })
 
-export class AuthenticationRoutingModule {}
+export class AppRoutingModule {}

@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';;
 
-import { AuthenticationComponent } from './app.component';
-import { AuthenticationRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AuthenticationComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AuthenticationRoutingModule
+    AuthenticationModule,
+    AppRoutingModule
   ],
-  bootstrap: [AuthenticationComponent],
-  exports: [AuthenticationComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
-  "files": ["./src/app/authentication.module.ts"],
-  "include": ["./src/app/authentication.module.ts"],
+  "files": ["src/app/authentication/authentication.module.ts"],
+  "include": ["src/app/authentication/authentication.module.ts"],
   "references": [
     {
       "path": "./tsconfig.app.json"

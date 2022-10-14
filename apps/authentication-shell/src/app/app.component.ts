@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'todo-web-root',
   template: `<router-outlet></router-outlet>`,
 })
-export class AuthenticationComponent {
+export class AppComponent {
   title = 'authentication';
 }
