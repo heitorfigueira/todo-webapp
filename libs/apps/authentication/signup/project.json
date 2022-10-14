@@ -1,0 +1,44 @@
+{
+  "name": "authentication-signup",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/apps/authentication/signup/src",
+  "prefix": "todo-web",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/apps/authentication/signup"],
+      "options": {
+        "project": "libs/apps/authentication/signup/ng-package.json",
+        "tailwindConfig": "libs/apps/authentication/signup/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/apps/authentication/signup/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/apps/authentication/signup/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/apps/authentication/signup"],
+      "options": {
+        "jestConfig": "libs/apps/authentication/signup/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/apps/authentication/signup/**/*.ts",
+          "libs/apps/authentication/signup/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

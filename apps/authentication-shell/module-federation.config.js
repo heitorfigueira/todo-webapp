@@ -1,11 +1,9 @@
 const { shareAll } = require('@angular-architects/module-federation/webpack');
 
 module.exports = {
-  name: 'todo-shell',
-
-  remotes: {
-    admin: 'admin-shell@http://localhost:4201/remoteEntry.js',
-    authentication: 'authentication-shell@http://localhost:4202/remoteEntry.js'
+  name: 'authentication-shell',
+  exposes: {
+    './Module': 'apps/authentication-shell/src/app/app.module.ts',
   },
   shared: {
       ...shareAll({
@@ -13,5 +11,6 @@ module.exports = {
       strictVersion: true,
       requiredVersion: 'auto'
       })
-  }
+  },
+  remotes: []
 };

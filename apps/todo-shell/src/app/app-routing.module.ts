@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
               type: 'module',
               remoteEntry: 'http://localhost:4202/remoteEntry.js',
               exposedModule: './Module',
-            }).then((m) => m.AuthorizationModule),
+            }).then((m) => m.AuthenticationModule),
         },
         {
           path: 'administration',
@@ -38,10 +38,10 @@ import { RouterModule } from '@angular/router';
             type: 'module',
             remoteEntry: 'http://localhost:4202/remoteEntry.js',
             exposedModule: './Module',
-            }).then((m) => m.AuthorizationModule),
+            }).then((m) => m.AuthenticationModule),
         },
       ],
-      { initialNavigation: 'enabledBlocking' }
+      //{ initialNavigation: 'enabledBlocking' }
     ),
   ]
 })
