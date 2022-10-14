@@ -27,12 +27,6 @@ export const appRoutes: Route[] = [
       }).then((m) => m.AdminModule),
   },
   {
-    path: 'dashboard',
-    loadChildren: () =>
-      import('../app/todo-lists/todo-lists.module')
-      .then((m) => m.TodoListModule),
-  },
-  {
     path: '**',
     redirectTo: 'auth'
   },
