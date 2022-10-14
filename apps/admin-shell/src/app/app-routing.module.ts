@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Route, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
-import { UserControlComponent } from './user-control/user-control.component';
+
+import { AppComponent } from './app.component';
+
+export const appRoutes: Route[] = [
+  {
+    path: '',
+    component: AppComponent
+  }
+];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(
-      [
-        {
-          path: '',
-          component: UserControlComponent,
-        },
-      ],
-    ),
+    CommonModule,
+    RouterModule.forRoot(appRoutes),
   ],
+  exports: [
+    RouterModule
+  ]
 })
-export class AdminRoutingModule {}
+
+export class AppRoutingModule {}

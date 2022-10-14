@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
-  "files": [],
-  "include": [],
+  "files": ["src/app/admin/admin.module.ts"],
+  "include": ["src/app/admin/admin.module.ts"],
   "references": [
     {
       "path": "./tsconfig.app.json",

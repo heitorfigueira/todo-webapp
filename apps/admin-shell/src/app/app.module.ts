@@ -1,18 +1,17 @@
+import { AdminModule } from './admin/admin.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 
-import { AdminComponent } from './app.component';
-import { AdminRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AdminComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule,
-    AdminRoutingModule
+    AdminModule,
+    AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AdminComponent],
+  bootstrap: [AppComponent],
 })
-export class AdminModule {}
+export class AppModule {}
