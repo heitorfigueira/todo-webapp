@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
-import { CreateAccountComponent } from './create-account/create-account.component';
+import { CreateAccountModule } from './create-account/create-account.module';
 
 export const authenticationSignupRoutes: Route[] = [
   {
     path: '',
-    component: CreateAccountComponent
+    component: CreateAccountModule
   }
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(authenticationSignupRoutes)]
+  imports: [
+    CommonModule,
+    RouterModule.forChild(authenticationSignupRoutes)
+  ],
+  exports: [RouterModule]
 })
 export class SignupRoutingModule {}

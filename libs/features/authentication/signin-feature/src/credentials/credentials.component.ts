@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SigninRequest } from '@authentication-domain';
 
@@ -7,7 +7,7 @@ import { SigninRequest } from '@authentication-domain';
   templateUrl: './credentials.component.html',
   styleUrls: ['./credentials.component.scss'],
 })
-export class CredentialsComponent {
+export class CredentialsComponent implements OnInit {
   signinForm: FormGroup;
   signinErrorMessages: string[] = []
 
@@ -21,6 +21,10 @@ export class CredentialsComponent {
           Validators.required],
       })
     }
+
+  ngOnInit(): void {
+    console.log('Estamos aqui.')
+  }
 
 
   toggleTab(): void {

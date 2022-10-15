@@ -25,10 +25,10 @@
         "libs/domains"
       ],
       "@signin-feature": [
-        "libs/apps/authentication/signin/src/index.ts"
+        "libs/features/authentication/signin-feature/src/index.ts"
       ],
       "@signup-feature": [
-        "libs/apps/authentication/signup/src/index.ts"
+        "libs/features/authentication/signup-feature/src/index.ts"
       ],
       "@authentication-domain": [
         "libs/domains/authentication/src/index.ts"
