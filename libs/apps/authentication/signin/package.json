@@ -1,7 +1,8 @@
 {
-  "name": "@todo-web/apps/authentication/signin",
+  "name": "@signin-feature",
   "version": "0.0.1",
   "peerDependencies": {
+    "@angular/material": "^14.2.5",
     "@angular/common": "^14.2.0",
     "@angular/core": "^14.2.0"
   },

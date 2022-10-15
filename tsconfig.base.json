@@ -15,11 +15,23 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@todo-web/apps/authentication/signin": [
+      "@libs": [
+        "libs/"
+      ],
+      "@apps": [
+        "apps/"
+      ],
+      "@domains": [
+        "libs/domains"
+      ],
+      "@signin-feature": [
         "libs/apps/authentication/signin/src/index.ts"
       ],
-      "@todo-web/apps/authentication/signup": [
+      "@signup-feature": [
         "libs/apps/authentication/signup/src/index.ts"
+      ],
+      "@authentication-domain": [
+        "libs/domains/authentication/src/index.ts"
       ]
     }
   },

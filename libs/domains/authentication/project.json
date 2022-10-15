@@ -1,0 +1,34 @@
+{
+  "name": "domains-authentication",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/domains/authentication/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/domains/authentication",
+        "main": "libs/domains/authentication/src/index.ts",
+        "tsConfig": "libs/domains/authentication/tsconfig.lib.json",
+        "assets": ["libs/domains/authentication/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/domains/authentication/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/domains/authentication"],
+      "options": {
+        "jestConfig": "libs/domains/authentication/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:domain"]
+}

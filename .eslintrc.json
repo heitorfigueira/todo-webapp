@@ -13,6 +13,26 @@
             "allow": [],
             "depConstraints": [
               {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "scope:domain",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:domain"]
+              },
+              {
+                "sourceTag": "scope:service",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:domain"]
+              },
+              {
+                "sourceTag": "scope:feature",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:service", "scope:domain"]
+              },
+              {
+                "sourceTag": "scope:shell",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:feature"]
+              },
+              {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
               }
