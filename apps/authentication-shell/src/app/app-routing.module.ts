@@ -9,7 +9,7 @@ export const appRoutes: Route[] = [
   {
     path: '',
     component: AppComponent
-  }
+  },
 ];
 
 @NgModule({

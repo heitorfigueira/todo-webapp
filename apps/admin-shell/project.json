@@ -7,7 +7,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/admin-shell",
         "index": "apps/admin-shell/src/index.html",
@@ -19,7 +21,9 @@
           "apps/admin-shell/src/favicon.ico",
           "apps/admin-shell/src/assets"
         ],
-        "styles": ["apps/admin-shell/src/styles.scss"],
+        "styles": [
+          "apps/admin-shell/src/styles.scss"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/admin-shell/webpack.config.js"
@@ -95,12 +99,16 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/admin-shell"],
+      "outputs": [
+        "coverage/apps/admin-shell"
+      ],
       "options": {
         "jestConfig": "apps/admin-shell/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["scope:shell"]
+  "tags": [
+    "scope:shell"
+  ]
 }

@@ -6,14 +6,18 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/apps/authentication-api",
         "main": "apps/authentication-api/src/main.ts",
         "tsConfig": "apps/authentication-api/tsconfig.app.json",
-        "assets": ["apps/authentication-api/src/assets"]
+        "assets": [
+          "apps/authentication-api/src/assets"
+        ]
       },
       "configurations": {
         "production": {
@@ -42,14 +46,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/authentication-api/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/authentication-api/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/authentication-api"],
+      "outputs": [
+        "coverage/apps/authentication-api"
+      ],
       "options": {
         "jestConfig": "apps/authentication-api/jest.config.ts",
         "passWithNoTests": true

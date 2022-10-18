@@ -1,5 +1,5 @@
 {
-  "name": "authentication-signin",
+  "name": "signin-feature",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/apps/authentication/signin/src",
@@ -7,10 +7,11 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:ng-packagr-lite",
-      "outputs": ["dist/libs/apps/authentication/signin"],
+      "outputs": [
+        "dist/libs/apps/authentication/signin"
+      ],
       "options": {
-        "project": "libs/apps/authentication/signin/ng-package.json",
-        "tailwindConfig": "libs/apps/authentication/signin/tailwind.config.js"
+        "project": "libs/apps/authentication/signin/ng-package.json"
       },
       "configurations": {
         "production": {
@@ -24,7 +25,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/apps/authentication/signin"],
+      "outputs": [
+        "coverage/libs/apps/authentication/signin"
+      ],
       "options": {
         "jestConfig": "libs/apps/authentication/signin/jest.config.ts",
         "passWithNoTests": true
@@ -40,5 +43,7 @@
       }
     }
   },
-  "tags": ["scope:feature"]
+  "tags": [
+    "scope:feature"
+  ]
 }

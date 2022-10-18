@@ -1,0 +1,49 @@
+{
+  "name": "header-feature",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/features/authentication/header-feature/src",
+  "prefix": "todo-web",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": [
+        "dist/libs/features/authentication/header-feature"
+      ],
+      "options": {
+        "project": "libs/features/authentication/header-feature/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/features/authentication/header-feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/features/authentication/header-feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/features/authentication/header-feature"
+      ],
+      "options": {
+        "jestConfig": "libs/features/authentication/header-feature/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/features/authentication/header-feature/**/*.ts",
+          "libs/features/authentication/header-feature/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "scope:feature"
+  ]
+}

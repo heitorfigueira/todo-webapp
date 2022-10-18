@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class AuthenticationSigninComponent implements OnInit {
   title = 'authentication-signin';
 
-
   ngOnInit(): void {
-    console.log('Aqui estamos.')
+    console.log('onInit auth signin')
   }
 }

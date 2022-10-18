@@ -7,7 +7,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/todo-shell",
         "index": "apps/todo-shell/src/index.html",
@@ -19,7 +21,9 @@
           "apps/todo-shell/src/favicon.ico",
           "apps/todo-shell/src/assets"
         ],
-        "styles": ["apps/todo-shell/src/styles.scss"],
+        "styles": [
+          "apps/todo-shell/src/styles.scss"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/todo-shell/webpack.config.js"
@@ -95,12 +99,16 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/todo-shell"],
+      "outputs": [
+        "coverage/apps/todo-shell"
+      ],
       "options": {
         "jestConfig": "apps/todo-shell/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["scope:shell"]
+  "tags": [
+    "scope:shell"
+  ]
 }

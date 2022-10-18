@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SigninRequest } from '@authentication-domain';
+import { ICentralFormTemplate, Field } from '@reactive-form';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'todo-web-credentials',
@@ -8,61 +9,48 @@ import { SigninRequest } from '@authentication-domain';
   styleUrls: ['./credentials.component.scss'],
 })
 export class CredentialsComponent implements OnInit {
-  signinForm: FormGroup;
-  signinErrorMessages: string[] = []
+  signinTemplate : ICentralFormTemplate;
 
-
-  constructor(
-    private formBuilder: FormBuilder) {
-      this.signinForm = this.formBuilder.group({
-        email: ['',
-          Validators.required],
-        password: ['',
-          Validators.required],
-      })
-    }
-
+  constructor() {
+    this.signinTemplate = new SigninFormTemplate();
+  }
   ngOnInit(): void {
-    console.log('Estamos aqui.')
+    console.log('onInit credentials')
+  }
+}
+
+export class SigninFormTemplate
+  implements ICentralFormTemplate {
+  private _title: string;
+  private _subtitle: string;
+  private _fields: Field[];
+
+  constructor() {
+    this._title = 'Signin'
+    this._subtitle = 'Please inform your credentials to get access to the website.'
+    this._fields = [
+      {
+        name: 'Email',
+        valueField: 'email',
+        controlConfig: {
+          'email': [
+            Validators.required
+          ]
+        }
+      },
+      {
+        name: 'Password',
+        valueField: 'password',
+        controlConfig: {
+          'password': [
+            Validators.required
+          ]
+        }
+      }
+    ]
   }
 
-
-  toggleTab(): void {
-    //this.signIn = !this.signIn
-  }
-
-  getSigninErrorMessages(field: string): string[] {
-    const errorMessages: string[] = []
-
-    if (this.signinForm.get(field)?.errors) {
-      Object.keys(this.signinForm.get(field)?.errors ?? {})
-        .forEach((error: string) => {
-          errorMessages[errorMessages.length] =
-            this.getErrorMessage(this.signinForm, error)
-      });
-    }
-    return errorMessages
-  }
-
-  signin(): void {
-    let request: SigninRequest = {
-      email: this.signinForm.get('email')?.value,
-      password: this.signinForm.get('password')?.value,
-    }
-
-    this.signinForm.reset()
-  }
-
-  private getErrorMessage(form: FormGroup, error: string): string {
-    switch (error) {
-      case 'required':
-        return 'This field is required'
-
-      case 'minLength':
-        return `This field requires at least { form.errors.minLength.requiredLength }`
-
-      default:
-        return 'There is a problem with this field'
-    }
-  }
+  get title() { return this._title }
+  get subtitle() { return this._subtitle }
+  get fields() { return this._fields }
 }

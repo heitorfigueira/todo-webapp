@@ -1,0 +1,13 @@
+<mat-toolbar class="flex content-center h-16 shadow mb-24">
+  <mat-toolbar-row class="flex">
+    <span class="grow">
+    </span>
+    <button
+      title="logout"
+      *ngIf="userLogged()"
+      (click)="logout()"
+      type="button">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

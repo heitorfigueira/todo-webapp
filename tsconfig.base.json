@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -15,23 +17,21 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@libs": [
-        "libs/"
+      "@apps": ["apps/"],
+      "@authentication-domain": ["libs/domains/authentication/src/index.ts"],
+      "@domains": ["libs/domains"],
+      "@header-feature": [
+        "libs/features/authentication/header-feature/src/index.ts"
       ],
-      "@apps": [
-        "apps/"
-      ],
-      "@domains": [
-        "libs/domains"
-      ],
+      "@libs": ["libs/"],
       "@signin-feature": [
         "libs/features/authentication/signin-feature/src/index.ts"
       ],
       "@signup-feature": [
         "libs/features/authentication/signup-feature/src/index.ts"
       ],
-      "@authentication-domain": [
-        "libs/domains/authentication/src/index.ts"
+      "@reactive-form": [
+        "libs/shared/ui/angular/reactive-form/src/index.ts"
       ]
     }
   },

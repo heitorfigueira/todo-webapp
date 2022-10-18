@@ -1,5 +1,5 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { TodoComponent } from './app.component';
 import { TodoRoutingModule } from './app-routing.module';
@@ -9,8 +9,11 @@ import { TodoRoutingModule } from './app-routing.module';
     TodoComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     TodoRoutingModule
+  ],
+  exports:[
+    BrowserAnimationsModule
   ],
   bootstrap: [
     TodoComponent

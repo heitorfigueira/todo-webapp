@@ -7,7 +7,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/authentication-shell",
         "index": "apps/authentication-shell/src/index.html",
@@ -19,7 +21,10 @@
           "apps/authentication-shell/src/favicon.ico",
           "apps/authentication-shell/src/assets"
         ],
-        "styles": ["apps/authentication-shell/src/styles.scss"],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/authentication-shell/src/styles.scss"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/authentication-shell/webpack.config.js"
@@ -95,12 +100,16 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/authentication-shell"],
+      "outputs": [
+        "coverage/apps/authentication-shell"
+      ],
       "options": {
         "jestConfig": "apps/authentication-shell/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["scope:shell"]
+  "tags": [
+    "scope:shell"
+  ]
 }
