@@ -20,15 +20,25 @@ export class CentralFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('central form')
+    let groupBuilder: any = {}
+
+    console.log(this.template)
+
+    this.template?.fields.forEach((f) => {
+      groupBuilder[f.name.toLowerCase()] = [null, f.controlConfig]
+    });
+
     this.form =
-      this.formBuilder?.group(
-        this.template?.fields
-        .map((f) => f.controlConfig))
+      this.formBuilder?.group(groupBuilder)
+  }
+
+  log(fieldHide?: boolean) {
+    console.log(fieldHide)
   }
 
   submit(): void {
-    console.log('submit')
+    console.log(this.form)
+    this.submitEvent.emit(this.form);
   }
   getErrorMessages(field: string): string[] {
     const errorMessages: string[] = []

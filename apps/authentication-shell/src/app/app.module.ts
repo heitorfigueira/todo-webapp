@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthenticationHeaderFeatureModule } from '@header-feature';
+import { AngularAuthStoreModule } from '@data-store/angular/auth-store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,7 +13,8 @@ import { AuthenticationHeaderFeatureModule } from '@header-feature';
     BrowserAnimationsModule,
     AuthenticationHeaderFeatureModule,
     AuthenticationModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularAuthStoreModule
   ],
   exports:[
     BrowserAnimationsModule
