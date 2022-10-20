@@ -3,12 +3,12 @@
     class="
     h-1/2 p-10 shadow-none rounded-none">
     <mat-card-title class="">{{ template.title }}</mat-card-title>
-    <mat-card-subtitle class="">{{ template.subtitle }}</mat-card-subtitle>
+    <mat-card-subtitle class="mb-6">{{ template.subtitle }}</mat-card-subtitle>
 
     <mat-card-content class="flex-col">
       <form [formGroup]="form">
         <mat-form-field *ngFor="let field of template.fields; index as i"
-          class="flex justify-around"
+          class="flex justify-around w-full mb-4"
           appearance="outline">
 
           <mat-label>{{ field.name }}</mat-label>
@@ -16,23 +16,31 @@
           <input
             matInput
             [formControlName]="field.name.toLowerCase()"
+            [type]="field.enableVisibility?.hide ? 'password' : 'text'"
             [title]="field.name"
             [placeholder]="field.name">
 
-          <mat-icon
+            <mat-icon
+            class="w-7"
             *ngIf="field.icon && !field.enableVisibility; else visibility"
             matSuffix>{{ field.icon }}
           </mat-icon>
           <ng-template #visibility>
             <button *ngIf="!!field.enableVisibility"
-              mat-icon-button matSuffix
-              [type]="field.enableVisibility ? 'password' : 'text'"
-              (click)="field.enableVisibility = !field.enableVisibility"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="field.enableVisibility">
+            class="w-7"
+            mat-icon-button matSuffix
+            (click)="field.enableVisibility.hide = !field.enableVisibility.hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="field.enableVisibility">
               <mat-icon>{{ field.enableVisibility ? 'visibility_off' : 'visibility' }}</mat-icon>
             </button>
           </ng-template>
+        <mat-error
+        *ngIf="fieldIsInvalid(field.name)">
+          <span *ngFor="let error of getErrorMessages(field.name)">
+            {{ error }}
+          </span>
+        </mat-error>
         </mat-form-field>
       </form>
     </mat-card-content>
@@ -42,7 +50,8 @@
         class="border border-solid"
         (click)="submit()"
         [disabled]="!form.valid"
-        mat-stroked-button>{{ template.submitText ?? 'Submit'}}</button>
+        mat-stroked-button>{{ template.submitText ?? 'Submit'}}
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

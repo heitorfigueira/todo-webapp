@@ -24,7 +24,9 @@ export class SigninFormTemplate
       {
         name: 'Password',
         valueField: 'password',
-        enableVisibility: true,
+        enableVisibility: {
+          hide: true
+        },
         controlConfig: [
           Validators.required
         ]

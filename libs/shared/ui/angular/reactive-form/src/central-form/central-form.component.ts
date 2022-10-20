@@ -22,8 +22,6 @@ export class CentralFormComponent implements OnInit {
   ngOnInit(): void {
     let groupBuilder: any = {}
 
-    console.log(this.template)
-
     this.template?.fields.forEach((f) => {
       groupBuilder[f.name.toLowerCase()] = [null, f.controlConfig]
     });
@@ -32,36 +30,39 @@ export class CentralFormComponent implements OnInit {
       this.formBuilder?.group(groupBuilder)
   }
 
-  log(fieldHide?: boolean) {
-    console.log(fieldHide)
-  }
-
   submit(): void {
-    console.log(this.form)
     this.submitEvent.emit(this.form);
   }
-  getErrorMessages(field: string): string[] {
+  getErrorMessages(fieldName: string): string[] {
     const errorMessages: string[] = []
-    if (this.form.get(field)?.errors)
-      Object.keys(this.form.get(field)?.errors ?? {})
+    if (this.form.controls[fieldName.toLowerCase()]?.errors)
+      Object.keys(this.form.controls[fieldName.toLowerCase()]?.errors ?? {})
         .forEach((error: string) => {
           errorMessages[errorMessages.length] =
-            this.getErrorMessage(this.form, error)
+            this.getErrorMessage(this.form, error, fieldName)
       });
 
     return errorMessages
   }
 
-  private getErrorMessage(form: FormGroup, error: string): string {
+  fieldIsInvalid(fieldName: string): boolean {
+    return this.form.controls[fieldName.toLowerCase()]?.touched &&
+           this.form.controls[fieldName.toLowerCase()]?.invalid
+  }
+
+  private getErrorMessage(form: FormGroup, error: string, fieldName: string): string {
     switch (error) {
       case 'required':
-        return 'This field is required'
+        return 'The ' + fieldName + ' field is required'
+
+      case 'pattern':
+        return 'This is not a valid ' + fieldName
 
       case 'minLength':
-        return `This field requires at least { form.errors.minLength.requiredLength }`
+        return `The `+ fieldName + ` requires at least { form.errors.minLength.requiredLength }`
 
       default:
-        return 'There is a problem with this field'
+        return 'Something is wrong here'
     }
   }
 }

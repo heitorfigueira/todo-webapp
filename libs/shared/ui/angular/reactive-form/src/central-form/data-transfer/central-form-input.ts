@@ -10,7 +10,9 @@ export interface Field {
   valueField: string,
   controlConfig: ControlConfig,
   icon?: string
-  enableVisibility?: boolean
+  enableVisibility?: {
+    hide: boolean
+  }
 }
 
 export interface ControlConfig {
