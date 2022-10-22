@@ -1,3 +1,5 @@
 export interface Session {
-  content: any
+  started: Date,
+  expires: Date,
+  token: string
 }

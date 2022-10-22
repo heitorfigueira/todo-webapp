@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'shared-data-store-angular-auth-store',
+  displayName: 'angular-auth-store',
   preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {

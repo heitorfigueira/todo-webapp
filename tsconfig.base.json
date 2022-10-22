@@ -19,7 +19,7 @@
     "paths": {
       "@apps": ["apps/"],
       "@authentication-domain": ["libs/domains/authentication/src/index.ts"],
-      "@data-store/angular/auth-store": [
+      "@angular/auth-store": [
         "libs/shared/data-store/angular/auth-store/src/index.ts"
       ],
       "@domains": ["libs/domains"],
@@ -28,7 +28,7 @@
       ],
       "@libs": ["libs/"],
       "@reactive-form": ["libs/shared/ui/angular/reactive-form/src/index.ts"],
-      "@services/angular/auth-service": [
+      "@angular/auth-service": [
         "libs/shared/services/angular/auth-service/src/index.ts"
       ],
       "@signin-feature": [

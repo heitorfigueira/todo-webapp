@@ -6,15 +6,20 @@ import { AuthenticationSigninComponent } from './authentication-signin.component
 import { CredentialsComponent } from './credentials/credentials.component';
 import { ReactiveFormModule } from '@reactive-form';
 
+import { AngularAuthStoreModule, AuthEffects } from '@angular/auth-store';
+import { EffectsModule } from '@ngrx/effects';
+
 @NgModule({
   declarations: [
     AuthenticationSigninComponent,
-    CredentialsComponent
+    CredentialsComponent,
   ],
   imports: [
     CommonModule,
     SigninRoutingModule,
-    ReactiveFormModule
-  ],
+    ReactiveFormModule,
+    AngularAuthStoreModule,
+    EffectsModule.forFeature([AuthEffects])
+  ]
 })
 export class AuthenticationSigninModule {}

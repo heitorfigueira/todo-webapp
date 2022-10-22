@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+import * as fromNgrx from './ngrx-state';
 
-
-import { AuthApiService } from '@services/angular/auth-service';
+export * from './ngrx-state';
 
 @NgModule({
   imports: [
     CommonModule,
-    // StoreModule.forFeature(
-    //   fromNgrx.AUTH_FEATURE_KEY,
-    //   fromNgrx.authReducer),
-    // EffectsModule.forFeature([AuthEffects])
-  ],
-  providers: [
-    // AuthFacade,
-    AuthApiService
+    StoreModule.forFeature(
+      fromNgrx.AUTH_STATE_KEY,
+      fromNgrx.authReducer)
   ]
 })
+
 export class AngularAuthStoreModule {}
