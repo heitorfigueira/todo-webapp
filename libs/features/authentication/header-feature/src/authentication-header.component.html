@@ -5,7 +5,7 @@
     </span>
     <button
       title="logout"
-      *ngIf="userLogged()"
+      *ngIf="userIsLogged$ | async"
       (click)="logout()"
       type="button">
       <mat-icon>logout</mat-icon>

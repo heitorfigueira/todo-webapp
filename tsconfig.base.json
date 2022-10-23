@@ -22,6 +22,9 @@
       "@angular/auth-store": [
         "libs/shared/data-store/angular/auth-store/src/index.ts"
       ],
+      "@angular/signin-store": [
+        "libs/shared/data-store/angular/signin-store/src/index.ts"
+      ],
       "@domains": ["libs/domains"],
       "@header-feature": [
         "libs/features/authentication/header-feature/src/index.ts"

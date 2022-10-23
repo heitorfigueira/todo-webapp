@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { ICentralFormTemplate } from '@reactive-form';
 import { FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
 
+
+import * as SigninPageActions from '@angular/signin-store'
 
 import { SigninFormTemplate } from './form-template';
 import { SigninRequest } from '@authentication-domain';
-import { Store } from '@ngrx/store';
-import * as AuthStateActions from '@angular/auth-store'
 
 @Component({
   selector: 'todo-web-credentials',
@@ -28,6 +29,6 @@ export class CredentialsComponent {
     }
 
     this.store.dispatch(
-      AuthStateActions.signin({ signinRequest }))
+      SigninPageActions.signin({ signinRequest }))
   }
 }

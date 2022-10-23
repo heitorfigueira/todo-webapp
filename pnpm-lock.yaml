@@ -31,7 +31,7 @@ specifiers:
   '@nrwl/cypress': 14.8.4
   '@nrwl/eslint-plugin-nx': 14.8.4
   '@nrwl/express': 14.8.4
-  '@nrwl/jest': 14.8.4
+  '@nrwl/jest': 15.0.1
   '@nrwl/linter': 14.8.4
   '@nrwl/node': 14.8.4
   '@nrwl/nx-cloud': latest
@@ -124,7 +124,7 @@ devDependencies:
   '@nrwl/cypress': 14.8.4_nw3usyur43tywodg2a26k7k2zy
   '@nrwl/eslint-plugin-nx': 14.8.4_hsyjmfselupjr6kr5lsqq7ypum
   '@nrwl/express': 14.8.4_fbabkvlsahc4g2zak3q2wy5kwa
-  '@nrwl/jest': 14.8.4_uxkdwkyzylpy26fgblcvu5b5jm
+  '@nrwl/jest': 15.0.1_uxkdwkyzylpy26fgblcvu5b5jm
   '@nrwl/linter': 14.8.4_voran33ukho5zhtzspjby3ijoy
   '@nrwl/node': 14.8.4_u7ylxcddd6q33okdajaqnjkxb4
   '@nrwl/nx-cloud': 15.0.0
@@ -3532,7 +3532,7 @@ packages:
     dependencies:
       '@bcoe/v8-coverage': 0.2.3
       '@jest/console': 28.1.3
-      '@jest/test-result': 28.1.1
+      '@jest/test-result': 28.1.3
       '@jest/transform': 28.1.3
       '@jest/types': 28.1.3
       '@jridgewell/trace-mapping': 0.3.16
@@ -3548,7 +3548,7 @@ packages:
       istanbul-lib-source-maps: 4.0.1
       istanbul-reports: 3.1.5
       jest-message-util: 28.1.3
-      jest-util: 28.1.1
+      jest-util: 28.1.3
       jest-worker: 28.1.3
       slash: 3.0.0
       string-length: 4.0.2
@@ -10242,9 +10242,9 @@ packages:
       jest-environment-node: 28.1.3
       jest-get-type: 28.0.2
       jest-regex-util: 28.0.2
-      jest-resolve: 28.1.1
+      jest-resolve: 28.1.3
       jest-runner: 28.1.3
-      jest-util: 28.1.1
+      jest-util: 28.1.3
       jest-validate: 28.1.3
       micromatch: 4.0.5
       parse-json: 5.2.0
@@ -10525,7 +10525,7 @@ packages:
       graceful-fs: 4.2.10
       jest-haste-map: 28.1.3
       jest-pnp-resolver: 1.2.2_jest-resolve@28.1.1
-      jest-util: 28.1.1
+      jest-util: 28.1.3
       jest-validate: 28.1.3
       resolve: 1.22.1
       resolve.exports: 1.1.0

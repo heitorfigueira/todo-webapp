@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+import { selectIsLogged, selectSession } from '@angular/auth-store';
+import * as AuthStateActions from '@angular/auth-store'
 
 @Component({
   selector: 'todo-web-authentication-header',
@@ -6,11 +10,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./authentication-header.component.scss']
 })
 export class AuthenticationHeaderComponent {
-  logout(): void {
-    console.log('logout')
-  }
+  userIsLogged$ = this.store.select(selectIsLogged);
+  session$ = this.store.select(selectSession);
 
-  userLogged(): boolean {
-    return true;
+  constructor(private store: Store) {
+  }
+  logout(): void {
+    this.session$.subscribe((session) => {
+      if (session != undefined)
+        this.store.dispatch(AuthStateActions.authenticationReset({ session }))
+    })
   }
 }

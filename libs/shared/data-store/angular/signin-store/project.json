@@ -1,15 +1,15 @@
 {
-  "name": "shared-data-store-angular-auth-store",
+  "name": "shared-data-store-angular-signin-store",
   "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/shared/data-store/angular/auth-store/src",
+  "sourceRoot": "libs/shared/data-store/angular/signin-store/src",
   "prefix": "todo-web",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/data-store/angular/auth-store"],
+      "outputs": ["coverage/libs/shared/data-store/angular/signin-store"],
       "options": {
-        "jestConfig": "libs/shared/data-store/angular/auth-store/jest.config.ts",
+        "jestConfig": "libs/shared/data-store/angular/signin-store/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -17,8 +17,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/shared/data-store/angular/auth-store/**/*.ts",
-          "libs/shared/data-store/angular/auth-store/**/*.html"
+          "libs/shared/data-store/angular/signin-store/**/*.ts",
+          "libs/shared/data-store/angular/signin-store/**/*.html"
         ]
       }
     }

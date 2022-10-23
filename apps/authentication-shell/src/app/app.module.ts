@@ -5,7 +5,7 @@ import { AuthenticationHeaderFeatureModule } from '@header-feature';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AppStoreModule } from './app-store.module';
+import { AppStateModule } from './state/state.module';
 
 import { AuthenticationModule } from './authentication/authentication.module';
 
@@ -18,7 +18,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
     AuthenticationHeaderFeatureModule,
     AuthenticationModule,
     AppRoutingModule,
-    AppStoreModule,
+    AppStateModule,
   ],
   bootstrap: [AppComponent],
 })

@@ -1,7 +1,8 @@
-<div class="w-full h-screen flex justify-around content-center">
+<div class="w-full flex justify-around content-center">
   <mat-card *ngIf="template"
     class="
-    h-1/2 p-10 shadow-none rounded-none">
+    h-1/2 p-10 rounded-none shadow-none
+    lg:h-auto lg:border-1 lg:border-solid lg:shadow-lg">
     <mat-card-title class="">{{ template.title }}</mat-card-title>
     <mat-card-subtitle class="mb-6">{{ template.subtitle }}</mat-card-subtitle>
 
@@ -21,33 +22,38 @@
             [placeholder]="field.name">
 
             <mat-icon
-            class="w-7"
-            *ngIf="field.icon && !field.enableVisibility; else visibility"
-            matSuffix>{{ field.icon }}
-          </mat-icon>
-          <ng-template #visibility>
-            <button *ngIf="!!field.enableVisibility"
-            class="w-7"
-            mat-icon-button matSuffix
-            (click)="field.enableVisibility.hide = !field.enableVisibility.hide"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="field.enableVisibility">
-              <mat-icon>{{ field.enableVisibility ? 'visibility_off' : 'visibility' }}</mat-icon>
-            </button>
-          </ng-template>
-        <mat-error
-        *ngIf="fieldIsInvalid(field.name)">
-          <span *ngFor="let error of getErrorMessages(field.name)">
-            {{ error }}
-          </span>
-        </mat-error>
+              class="w-7"
+              *ngIf="field.icon && !field.enableVisibility; else visibility"
+              matSuffix>{{ field.icon }}
+            </mat-icon>
+            <ng-template #visibility>
+              <button *ngIf="!!field.enableVisibility"
+                class="w-7"
+                mat-icon-button matSuffix
+                (click)="field.enableVisibility.hide = !field.enableVisibility.hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="field.enableVisibility">
+                <mat-icon>{{ field.enableVisibility ? 'visibility_off' : 'visibility' }}</mat-icon>
+              </button>
+            </ng-template>
+            <mat-error
+              *ngIf="fieldIsInvalid(field.name)">
+              <span *ngFor="let error of getErrorMessages(field.name)">
+                {{ error }}
+              </span>
+            </mat-error>
         </mat-form-field>
       </form>
     </mat-card-content>
 
-    <mat-card-actions class="flex justify-end">
+    <mat-card-actions
+      class="
+        flex justify-arround
+        lg:justify-end">
       <button
-        class="border border-solid"
+        class="
+          border border-solid w-full mx-20
+          lg:m-0 lg:w-auto"
         (click)="submit()"
         [disabled]="!form.valid"
         mat-stroked-button>{{ template.submitText ?? 'Submit'}}

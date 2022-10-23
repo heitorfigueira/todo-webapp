@@ -14,4 +14,4 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     }),
   ],
 })
-export class AppStoreModule {}
+export class AppStateModule {}
