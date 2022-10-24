@@ -15,5 +15,8 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
       AuthStoreEffects
     ])
   ],
+  exports: [
+    AngularAuthStoreModule
+  ]
 })
 export class AuthenticationModule {}

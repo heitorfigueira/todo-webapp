@@ -3,31 +3,35 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 
 import { Session, SigninRequest, SignupRequest } from '@authentication-domain';
+
+export enum AuthApiEndpoints {
+  SIGNIN = "Auth/signin",
+  SIGNUP = "Auth/signup",
+  SIGNOFF = "Auth/signoff"
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthApiService {
+  BASE_URL = 'https://localhost:7090/'
+
   constructor(private http: HttpClient) {}
 
   signin(param: SigninRequest) {
-    const url = `https://localhost:7090/Auth/signin`;
-    return this.http.post(url, param).pipe(
-      catchError(this.handleError)
-    );
+    return this.post(this.BASE_URL + AuthApiEndpoints.SIGNIN, param);
   }
 
   signup(param: SignupRequest) {
-    const url = `https://localhost:7090/Auth/signup`;
-    return this.http.post(url, param).pipe(
-      catchError(this.handleError)
-    );
+    return this.post(this.BASE_URL + AuthApiEndpoints.SIGNUP, param);
   }
 
   signoff(param: Session) {
-    const url = `https://localhost:7090/Auth/signoff`;
-    return this.http.post(url, param).pipe(
-      catchError(this.handleError)
-    );
+    return this.post(this.BASE_URL + AuthApiEndpoints.SIGNOFF, param);
+  }
+
+  private post<TType>(url: string, param: TType) {
+    return this.http.post(url, param).pipe(catchError(this.handleError))
   }
 
   private handleError(error: HttpErrorResponse) {

@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { AngularSigninStoreModule, SigninPageEffects } from '@angular/signin-store';
+import { AngularSigninStoreModule, SigninStoreEffects } from '@angular/signin-store';
 
 import * as fromAuthState from './state/auth-store.reducer';
 import * as fromSelectors from './state/auth-store.selectors';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -14,11 +15,13 @@ import * as fromSelectors from './state/auth-store.selectors';
       fromAuthState.authReducer),
     AngularSigninStoreModule,
     EffectsModule.forFeature([
-        SigninPageEffects
-      ])
+        SigninStoreEffects
+      ]),
+    HttpClientModule
   ],
   exports: [
-    AngularSigninStoreModule
+    AngularSigninStoreModule,
+    HttpClientModule
   ]
 })
 

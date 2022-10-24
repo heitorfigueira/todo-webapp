@@ -28,7 +28,6 @@ export class CredentialsComponent {
       password: signinForm.value['password']
     }
 
-    this.store.dispatch(
-      SigninPageActions.signin({ signinRequest }))
+    this.store.dispatch(SigninPageActions.signin({ signinRequest }))
   }
 }

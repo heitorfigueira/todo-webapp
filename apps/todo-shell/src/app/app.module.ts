@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { TodoComponent } from './app.component';
 import { TodoRoutingModule } from './app-routing.module';
+import { RoutingService } from './services/routing.service';
+import { AppStateModule } from './state/app-state.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,13 +13,19 @@ import { TodoRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserAnimationsModule,
-    TodoRoutingModule
+    TodoRoutingModule,
+    AppStateModule,
+    HttpClientModule,
   ],
   exports:[
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   bootstrap: [
     TodoComponent
   ],
+  providers: [
+    RoutingService,
+  ]
 })
 export class TodoModule {}

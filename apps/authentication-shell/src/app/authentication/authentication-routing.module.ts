@@ -6,7 +6,7 @@ export const authenticationRoutes: Route[] = [
     path: '',
     loadChildren: () =>
       import('@signin-feature')
-      .then(m => m.AuthenticationSigninModule),
+      .then(m => m.SigninFeatureModule),
       pathMatch: 'full'
   },
   {

@@ -9,22 +9,17 @@ import * as fromEffectsActions from './signin-state.effects.actions';
 import * as fromActions from './signin-state.actions';
 
 @Injectable()
-export class SigninPageEffects {
+export class SigninStoreEffects {
   signin$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromEffectsActions.signin),
       exhaustMap((action) => {
-        debugger
         return this.authService.signin(action.signinRequest)
         .pipe(
           map((session: any) => {
-            debugger
             return fromActions.signinSuccess({ session })
           }),
-          catchError(error => {
-            debugger
-            return of(fromActions.signinFailure({ error }))
-          })
+          catchError(error => of(fromActions.signinFailure({ error })))
         )
       })
     )

@@ -15,27 +15,27 @@ export class AuthStoreEffects {
   authenticationReset$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromEffectsActions.authenticationReset),
-      exhaustMap((action) =>
-        this.authService.signoff(action.session)
-      .pipe(
-        map(fromActions.authenticationResetSuccess),
-        catchError(error =>
-          of(fromActions.authenticationResetFailed({ error }))
-          )
+      exhaustMap((action) => {
+        return this.authService.signoff(action.session)
+        .pipe(
+          map(fromActions.authenticationResetSuccess),
+          catchError(error => {
+            return of(fromActions.authenticationResetFailed({ error }))
+          })
         )
-      )
+      })
     )
   )
 
-  authenticationReceived$ = createEffect(() =>
-    this.actions$.pipe(
+  authenticationReceived$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(fromSigninActions.signinSuccess),
       map((action) =>
         fromActions.authenticationReceived({ session: action.session }),
         catchError(error => of(console.log(error)))
       )
     )
-  )
+  })
   constructor(
     private actions$: Actions,
     private authService: AuthApiService

@@ -1,1 +1,1 @@
-export * from './authentication-signin.module';
+export * from './signin.module';

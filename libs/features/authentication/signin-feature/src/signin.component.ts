@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'todo-web-authentication-signin',
   template: `<router-outlet></router-outlet>`,
 })
-export class AuthenticationSigninComponent implements OnInit {
+export class SigninFeatureComponent implements OnInit {
   title = 'authentication-signin';
 
   ngOnInit(): void {

@@ -6,12 +6,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 
 
-import { AuthenticationHeaderComponent } from './authentication-header.component';
+import { HeaderFeatureComponent } from './header.component';
 import { AngularAuthStoreModule, AuthStoreEffects } from '@angular/auth-store';
 
 @NgModule({
   declarations: [
-    AuthenticationHeaderComponent
+    HeaderFeatureComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +22,7 @@ import { AngularAuthStoreModule, AuthStoreEffects } from '@angular/auth-store';
     EffectsModule.forFeature([AuthStoreEffects])
   ],
   exports:[
-    AuthenticationHeaderComponent
+    HeaderFeatureComponent
   ]
 })
-export class AuthenticationHeaderFeatureModule {}
+export class HeaderFeatureModule {}

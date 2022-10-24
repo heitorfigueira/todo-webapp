@@ -6,10 +6,10 @@ import * as AuthStateActions from '@angular/auth-store'
 
 @Component({
   selector: 'todo-web-authentication-header',
-  templateUrl: './authentication-header.component.html',
-  styleUrls: ['./authentication-header.component.scss']
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class AuthenticationHeaderComponent {
+export class HeaderFeatureComponent {
   userIsLogged$ = this.store.select(selectIsLogged);
   session$ = this.store.select(selectSession);
 

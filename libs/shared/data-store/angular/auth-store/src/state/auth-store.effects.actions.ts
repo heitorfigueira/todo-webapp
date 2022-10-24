@@ -2,13 +2,13 @@ import { createAction, props } from '@ngrx/store';
 
 import { Session } from '@authentication-domain';
 
-export enum AuthStateEffectsActions {
+export enum AuthStoreEffectsActions {
   AUTHENTICATION_RESET = '[Authentication Store] Authentication Reset',
 }
 
 export const authenticationReset =
   createAction(
-    AuthStateEffectsActions.AUTHENTICATION_RESET,
+    AuthStoreEffectsActions.AUTHENTICATION_RESET,
     props<{ session: Session }>());
 
 

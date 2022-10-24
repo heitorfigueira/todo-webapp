@@ -1,2 +1,2 @@
-export * from './authentication-header.module';
-export * from './authentication-header.component';
+export * from './header.module';
+export * from './header.component';

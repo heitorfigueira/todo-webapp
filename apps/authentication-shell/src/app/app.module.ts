@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AuthenticationHeaderFeatureModule } from '@header-feature';
+import { HeaderFeatureModule } from '@header-feature';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AppStateModule } from './state/state.module';
+import { AppStateModule } from './state/app-state.module';
 
 import { AuthenticationModule } from './authentication/authentication.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AuthenticationModule } from './authentication/authentication.module';
   ],
   imports: [
     BrowserAnimationsModule,
-    AuthenticationHeaderFeatureModule,
+    HttpClientModule,
+    HeaderFeatureModule,
     AuthenticationModule,
     AppRoutingModule,
     AppStateModule,

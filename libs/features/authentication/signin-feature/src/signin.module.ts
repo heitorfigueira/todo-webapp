@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 
 import { ReactiveFormModule } from '@reactive-form';
-import { AngularSigninStoreModule, SigninPageEffects } from '@angular/signin-store';
+import { AngularSigninStoreModule, SigninStoreEffects } from '@angular/signin-store';
 
 import { SigninRoutingModule } from './signin-routing.module';
-import { AuthenticationSigninComponent } from './authentication-signin.component';
+import { SigninFeatureComponent } from './signin.component';
 import { CredentialsComponent } from './credentials/credentials.component';
 
 
 @NgModule({
   declarations: [
-    AuthenticationSigninComponent,
+    SigninFeatureComponent,
     CredentialsComponent
   ],
   imports: [
@@ -21,8 +21,8 @@ import { CredentialsComponent } from './credentials/credentials.component';
     ReactiveFormModule,
     AngularSigninStoreModule,
     EffectsModule.forFeature([
-      SigninPageEffects
+      SigninStoreEffects
     ])
   ]
 })
-export class AuthenticationSigninModule {}
+export class SigninFeatureModule {}
